@@ -28,7 +28,7 @@ jobs:
         run: npm install bookmarklet -g
       - name: Compile just CT for now
         run: bookmarklet -d ClickTroll.js
-      - name: stage changed files
-        run: git commit -m "builded"
-      - name: push
-        run: git push -u origin HEAD
+      - name: Simple commit
+        uses: zwaldowski/git-commit-action@v1
+        with:
+          working_directory: .
