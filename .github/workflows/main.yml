@@ -29,7 +29,6 @@ jobs:
       - name: Compile just CT for now
         run: bookmarklet -d ClickTroll.js
       - name: stage changed files
-        run: | 
-          git add -A
-          git commit -m "builded"
-          git push -u origin HEAD
+        run: git commit -m "builded"
+      - name: push
+        run: git push -u origin HEAD
