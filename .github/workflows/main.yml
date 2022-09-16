@@ -29,4 +29,4 @@ jobs:
       - name: Compile just CT for now
         run: |
           bookmarklet -d ClickTroll.js
-          echo Compiled
+          git push
