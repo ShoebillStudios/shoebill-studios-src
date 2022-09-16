@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Compile Bookmarklets
 
 # Controls when the workflow will run
 on:
@@ -27,6 +27,12 @@ jobs:
       - name: Download bookmarklet maker
         run: npm install bookmarklet -g
       - name: Compile just CT for now
-        run: |
-          bookmarklet -d ClickTroll.js
-          git push
+        run: bookmarklet -d ClickTroll.js
+      - name: stage changed files
+        run: git add .
+      - name: commit changed files
+        run: git commit -m "Compiled CT"
+      - name: fetch from master
+        run: git fetch origin main
+      - name: push code to master
+        run: git push origin HEAD:main
